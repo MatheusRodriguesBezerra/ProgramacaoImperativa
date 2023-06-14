@@ -1,0 +1,3 @@
+9.2.1 -> ausência do ';' após o y
+9.2.2 -> ausência do 'struct' após o typedef
+9.2.3 -> ausência do nome tio da variável

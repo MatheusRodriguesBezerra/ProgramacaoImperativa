@@ -1,0 +1,4 @@
+9.1.1 -> sem as chaves e sem o ';' após o y e no final
+9.1.2 -> tem de haver ';' após qualquer declaração de tipo de variável e a ausência de ';' após o y
+9.1.3 -> ausência do ';' após o y e no final
+9.1.4 -> ausência do ';' no final
