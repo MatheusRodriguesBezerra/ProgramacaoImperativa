@@ -90,6 +90,29 @@ int decimal(char str[]){
     
 }
 
+// 5.8
+int contarMaiores(int vec[], int size, int val){
+    int resultado = 0; 
+    for (int i = 0; i < size; i++){
+        if (vec[i] > val){
+            resultado = resultado + 1;
+        }     
+    }   
+    printf("%d", resultado);
+}
+
+// 5.9
+int filtrarPositivos(int vec[], int size){
+    int somador = 0;
+    for (int i = 0; i < size; i++){
+        if (vec[i] >= 0){
+            somador ++;
+        }        
+    }
+    printf("%d", somador);    
+}
+
+
 
 int main(){
     char a[200] = "h18asadh";
