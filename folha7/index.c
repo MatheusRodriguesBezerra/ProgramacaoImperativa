@@ -26,7 +26,28 @@ int naoRepetidos(){
     
 }
 
+// 7.2
+void letrasRepetidas(){
+    int letras[26], n, letra;
+    for(int i = 0; i < 26; i++){
+        letras[i] = 0;
+    }
+    char l2;
+    letra = toupper(getchar());
+    letras[letra-65]++;
+    while(letra != '\n'){
+        letra = toupper(getchar());
+        if (isalpha(letra)){
+            letras[letra-65]++;
+        }
+    }
+    for(int i = 0; i < 26; i++){
+        putchar(i+65);
+        printf(": %d\n", letras[i]);
+    }    
+}
+
 
 int main() {
-
+    letrasRepetidas();
 }
