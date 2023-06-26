@@ -6,25 +6,24 @@ typedef struct ponto{
 } Ponto;
 
 double distancia(Ponto a, Ponto b){
-    int resposta;
-    resposta = sqrt((a.x - b.x)*(a.x - b.x) + (a.y - b.y)*(a.y - b.y));
-
-    printf("%d", resposta);
-
+    double xn, yn;
+    xn = (a.x-b.x) * (a.x-b.x);
+    yn = (a.y-b.y) * (a.y-b.y);
+    return sqrt(xn+yn);
 }
 
-int mesmo_ponto(Ponto a, Ponto b){
+int mesmoPonto(Ponto a, Ponto b){
     if((a.x == b.x) && (a.y == b.y)){
-        printf("1");
+        return 1;
     }else{
-        printf("0");
-    }
-    
+        return 0;
+    }   
 }
 
 int main(){
     Ponto a = {4,1};
-    Ponto b = {6,1};
+    Ponto b = {4,1};
 
-    mesmo_ponto(a, b);
+    printf("%d", mesmoPonto(a, b));
+    return 0;
 }

@@ -1,60 +1,35 @@
 #include <stdio.h>
 
-void qst1(){
-    FILE *mensagem;
-    int linhas;
+#define MAX 10000
 
-    printf("Numero de linhas: ");
-    scanf("%d", &linhas);
-
-    mensagem=fopen("main.txt","w");
-
-    for (int i = 0; i < linhas; i++){
-        fprintf(mensagem,"linha %d\n", i+1);      
+int numeroLinhas(char *nomeFicheiro){
+    FILE *fptr;
+    int sum = 0;
+    fptr = fopen(nomeFicheiro, "r");
+    char myString[MAX];
+    while(fgets(myString, MAX, fptr)) {
+        sum++;
     }
-
-    fclose(mensagem);
+    return sum;
 }
 
-
-int numero_linhas(){
-    FILE *mensagem;
-    int soma = 0;
-    char buffer[100];
-
-    mensagem = fopen("main.txt", "r");
-
-    while (fgets(buffer, 100, mensagem) ){
-        soma++;
+int countWords(char *nomeFicheiro){
+    FILE *fptr;
+    int sum = 0;
+    fptr = fopen(nomeFicheiro, "r");
+    char myString[MAX];
+    while(fgets(myString, MAX, fptr)) {
+        for(int i = 0; myString[i] != '\0'; i++){
+            if(myString[i] == ' ' || myString[i] == '\t' || myString[i] == '\n'){
+                sum++;
+            }
+        }   
     }
-    
-    fclose(mensagem);
-    printf("%d", soma);
-
+    return sum;
 }
 
-int qst4(){
-    FILE *mensagem;
-    int soma = 0;
-    char buffer, old= ' ' ;
-
-    mensagem = fopen("main.txt", "r");
-
-    while ((buffer = fgetc(mensagem)) != EOF){
-        printf("%c", buffer);
-        //token = strtok
-        if ((buffer == '\n' || buffer == ' ') && (old != ' ')){            
-            soma++;
-        }
-        old = buffer;
-    }
-    
-    fclose(mensagem);
-    printf("%d", soma);
-
-}
-
-int main() {
-    qst4();
+int main(){
+    printf("%d\n", countWords("main.txt"));
+    return 0;
 }
 
